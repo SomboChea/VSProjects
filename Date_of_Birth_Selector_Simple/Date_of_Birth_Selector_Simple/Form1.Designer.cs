@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lbRes = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbYear
@@ -63,7 +64,7 @@
             "October",
             "November",
             "December"});
-            this.cbMonth.Location = new System.Drawing.Point(288, 82);
+            this.cbMonth.Location = new System.Drawing.Point(274, 82);
             this.cbMonth.Name = "cbMonth";
             this.cbMonth.Size = new System.Drawing.Size(217, 34);
             this.cbMonth.TabIndex = 1;
@@ -73,10 +74,11 @@
             // 
             this.cbDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDay.FormattingEnabled = true;
-            this.cbDay.Location = new System.Drawing.Point(572, 82);
+            this.cbDay.Location = new System.Drawing.Point(552, 82);
             this.cbDay.Name = "cbDay";
             this.cbDay.Size = new System.Drawing.Size(121, 34);
             this.cbDay.TabIndex = 2;
+            this.cbDay.SelectedIndexChanged += new System.EventHandler(this.cbDay_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -92,7 +94,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(360, 47);
+            this.label2.Location = new System.Drawing.Point(349, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 26);
             this.label2.TabIndex = 4;
@@ -102,17 +104,28 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(602, 47);
+            this.label3.Location = new System.Drawing.Point(588, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 26);
             this.label3.TabIndex = 5;
             this.label3.Text = "Day";
+            // 
+            // lbRes
+            // 
+            this.lbRes.AutoSize = true;
+            this.lbRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRes.Location = new System.Drawing.Point(283, 152);
+            this.lbRes.Name = "lbRes";
+            this.lbRes.Size = new System.Drawing.Size(208, 26);
+            this.lbRes.TabIndex = 6;
+            this.lbRes.Text = "Please select date...";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 205);
+            this.Controls.Add(this.lbRes);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -135,6 +148,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbRes;
     }
 }
 

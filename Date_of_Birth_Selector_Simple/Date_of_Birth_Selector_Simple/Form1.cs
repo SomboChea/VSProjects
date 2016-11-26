@@ -12,12 +12,20 @@ namespace Date_of_Birth_Selector_Simple
 {
     public partial class frmMain : Form
     {
-        //get date & time from local machine.
+        //get date & time from local machine;
         private static DateTime dt = DateTime.Now;
         //get current year;
         private int currentYear = dt.Year;
-        //count run the first form
+        //count run the first form;
         private int count = 0;
+        //var for res year;
+        private static string txtYear = "";
+        //var for res month;
+        private static string txtMonth = "";
+        //var for res day;
+        private static string txtDay = "";
+        //var for label result;
+        private static string txtRes = "Please select date...";
 
         public frmMain()
         {
@@ -36,6 +44,8 @@ namespace Date_of_Birth_Selector_Simple
             cbMonth.SelectedIndex = dt.Month-1;
             cbDay.SelectedItem = "" + dt.Day;
 
+            lbRes.Text = txtRes;
+
         }
 
         private void cbMonth_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,10 +58,19 @@ namespace Date_of_Birth_Selector_Simple
             for(int i = 1; i <= days; i++)
                 cbDay.Items.Add("" + i);
             cbDay.SelectedItem = "" + cbDay.SelectedItem;
+
+            //Get string month;
+            txtMonth = "" + cbMonth.SelectedItem;
+            //Auto result on screen;
+            lbRes.Text = txtDay+"/"+txtMonth+"/"+txtYear;
+
         }
 
         private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Get string year;
+            txtYear = "" + cbYear.SelectedItem;
+
             if (count > 0)
             {
                 cbDay.Items.Clear();
@@ -62,8 +81,19 @@ namespace Date_of_Birth_Selector_Simple
                 for (int i = 1; i <= days; i++)
                     cbDay.Items.Add("" + i);
                 cbDay.SelectedItem = "" + cbDay.SelectedItem;
+
+                //Auto result on screen;
+                lbRes.Text = txtDay + "/" + txtMonth + "/" + txtYear;
             }
             count = 1;
+        }
+
+        private void cbDay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Get string day;
+            txtDay = "" + cbDay.SelectedItem;
+            //Auto result on screen;
+            lbRes.Text = txtDay + "/" + txtMonth + "/" + txtYear;
         }
     }
 }
